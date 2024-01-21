@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'PC-GPTv1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ECB3EF099EC24B1C911A28A6F3865838 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7ED5071F6A2D4BD1A94F52C343A8DADE }}
