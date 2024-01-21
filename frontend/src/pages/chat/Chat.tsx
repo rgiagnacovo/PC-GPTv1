@@ -75,7 +75,7 @@ const Chat = () => {
 
     useEffect(() => {
         if (appStateContext?.state.isCosmosDBAvailable?.status === CosmosDBStatus.NotWorking && appStateContext.state.chatHistoryLoadingState === ChatHistoryLoadingState.Fail && hideErrorDialog) {
-            let subtitle = `${appStateContext.state.isCosmosDBAvailable.status}. Please contact the site administrator.`
+            let subtitle = `${appStateContext.state.isCosmosDBAvailable.status}. Please contact ICT Helpdesk helpdesk@preston.ac.uk.`
             setErrorMsg({
                 title: "Chat history is not enabled",
                 subtitle: subtitle
@@ -212,7 +212,7 @@ const Chat = () => {
 
         } catch (e) {
             if (!abortController.signal.aborted) {
-                let errorMessage = "An error occurred. Please try again. If the problem persists, please contact the site administrator.";
+                let errorMessage = "An error occurred. Please try again. If the problem persists, please contact ICT Helpdesk helpdesk@preston.ac.uk.";
                 if (result.error?.message) {
                     errorMessage = result.error.message;
                 }
@@ -284,7 +284,7 @@ const Chat = () => {
                 let errorChatMsg: ChatMessage = {
                     id: uuid(),
                     role: ERROR,
-                    content: "There was an error generating a response. Chat history can't be saved at this time. If the problem persists, please contact the site administrator.",
+                    content: "There was an error generating a response. Chat history can't be saved at this time. If the problem persists, please contact ICT Helpdesk helpdesk@preston.ac.uk.",
                     date: new Date().toISOString()
                 }
                 let resultConversation;
@@ -376,7 +376,7 @@ const Chat = () => {
 
         } catch (e) {
             if (!abortController.signal.aborted) {
-                let errorMessage = "An error occurred. Please try again. If the problem persists, please contact the site administrator.";
+                let errorMessage = "An error occurred. Please try again. If the problem persists, please contact ICT Helpdesk helpdesk@preston.ac.uk.";
                 if (result.error?.message) {
                     errorMessage = result.error.message;
                 }
@@ -444,7 +444,7 @@ const Chat = () => {
             if (!response.ok) {
                 setErrorMsg({
                     title: "Error clearing current chat",
-                    subtitle: "Please try again. If the problem persists, please contact the site administrator.",
+                    subtitle: "Please try again. If the problem persists, please contact ICT Helpdesk helpdesk@preston.ac.uk.",
                 })
                 toggleErrorDialog();
             } else {
@@ -496,7 +496,7 @@ const Chat = () => {
                 saveToDB(appStateContext.state.currentChat.messages, appStateContext.state.currentChat.id)
                     .then((res) => {
                         if (!res.ok) {
-                            let errorMessage = "An error occurred. Answers can't be saved at this time. If the problem persists, please contact the site administrator.";
+                            let errorMessage = "An error occurred. Answers can't be saved at this time. If the problem persists, please contact ICT Helpdesk helpdesk@preston.ac.uk.";
                             let errorChatMsg: ChatMessage = {
                                 id: uuid(),
                                 role: ERROR,
@@ -592,8 +592,8 @@ const Chat = () => {
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>Start exploring</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>Preston College chatbot is here to answer your questions</h2>
+                                <h1 className={styles.chatEmptyStateTitle}>Start exploring</h1> 
+                                <h2 className={styles.chatEmptyStateSubtitle}>Preston College chatbot is here to answer your questions</h2> 
                             </Stack>
                         ) : (
                             <div className={styles.chatMessageStream} style={{ marginBottom: isLoading ? "40px" : "0px" }} role="log">
